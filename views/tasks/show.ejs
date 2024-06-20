@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h1 class="card-title mb-4"> <b class="d-inline-block d-md-inline">Title:</b>
+                        <span class="d-inline-block d-md-inline">
+                            <%= task.title %>
+                        </span>
+                    </h1>
+                    <h2 class="card-text mb-4"> <b class="d-inline-block d-md-inline">Description:</b>
+                        <span class="d-inline-block d-md-inline">
+                            <%= task.description %>
+                        </span>
+                    </h2>
+                    <h3 class="card-text mb-4"><b>Due date:</b>
+                        <%= task.duedate.toLocaleDateString() %>
+                            <!-- toLocaleDateString() -> its a method called on the date obj, it coverts the date to a string representation -->
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <a class="card-link btn btn-info mb-3" href="/tasks/<%= task._id %>/edit">Edit</a>
+                    <form class="d-inline" action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger mb-3">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

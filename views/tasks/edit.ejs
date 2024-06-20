@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplate") %>
+    <div class="row">
+        <h1 class="text-center">Edit Task</h1>
+        <div class="col-6 offset-3">
+            <form action="/tasks/<%= task._id %>?_method=PUT" method="post" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title:</label>
+                    <input class="form-control" type="text" id="title" name="task[title]" value="<%= task.title%>"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description:</label>
+                    <textarea class="form-control" type="text" id="description" name="task[description]"
+                        required><%= task.description  %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="duedate">Date:</label>
+                    <input class="form-control" type="Date" id="duedate" name="task[duedate]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Update Task</button>
+                </div>
+            </form>
+            <a class="btn btn-primary mb-3" href="/tasks">All Tasks</a>
+        </div>
+    </div>

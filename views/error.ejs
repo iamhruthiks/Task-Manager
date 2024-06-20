@@ -1,0 +1,17 @@
+<!-- definig error template -->
+<% layout("layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">
+                    <center>
+                        Opps!, something went wrong.
+                    </center>
+                </h4>
+                <p>
+                    <code><%= err.stack  %></code>
+                    <!-- code tag is used here to maintain err.stack format and to not break the layout of surrounding elements -->
+                </p>
+            </div>
+        </div>
+    </div>
